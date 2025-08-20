@@ -1,5 +1,7 @@
 const express = require("express")
+const morgan = require('morgan')
 const app = express()
+app.use(morgan('dev'))
 
 let person = [
     {
@@ -25,6 +27,12 @@ let person = [
 ]
 
 app.use(express.json())
+
+morgan.token('body', (req) => {
+  return JSON.stringify(req.body)
+})
+
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
 
 app.get('/api/person', (req, res) => {
     res.json(person)
@@ -76,7 +84,7 @@ const newId = () => {
 }
 
 const isName = (name) => {
-  return person.filter((p) => p.name === name)
+  return person.find((p) => p.name === name)
 }
 
 
