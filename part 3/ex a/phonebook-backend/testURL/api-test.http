@@ -1,0 +1,22 @@
+### get all notes
+GET http://localhost:3001/api/notes/26
+
+### get all person
+GET http://localhost:3001/api/person
+
+### get by id 1
+GET http://localhost:3001/api/person/1
+
+### post new person
+POST http://localhost:3001/api/person/
+content-type: application/json
+
+{
+  "name": "mariana bonita",
+  "number": "040-1234756"
+}
+
+
+
+### Delete person 3
+DELETE http://localhost:3001/api/person/3

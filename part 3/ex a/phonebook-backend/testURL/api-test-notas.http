@@ -1,0 +1,37 @@
+### 📌 GET todas as notas
+GET http://localhost:3001/api/notes
+Content-Type: application/json
+
+###
+
+### 📌 GET uma nota por ID
+GET http://localhost:3001/api/notes/68a89187aa376343d44763f6
+Content-Type: application/json
+
+###
+
+### 📌 POST criar uma nova nota
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "Aprender Node.js com MongoDB",
+  "important": true
+}
+
+###
+
+### 📌 PUT atualizar uma nota existente
+PUT http://localhost:3001/api/notes/68a89187aa376343d44763f6
+Content-Type: application/json
+
+{
+  "content": "Atualizei o conteúdo da nota",
+  "important": false
+}
+
+###
+
+### 📌 DELETE remover uma nota
+DELETE http://localhost:3001/api/notes/68a88ca7f256c8245584ca4b
+Content-Type: application/json
